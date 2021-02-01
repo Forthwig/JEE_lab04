@@ -20,6 +20,7 @@ public class CompanyService {
         this.companyDAO = companyDAO;
     }
 
+    public Company get(int id){return companyDAO.getOne((long) id);}
 
     public void deleteAll() {
         companyDAO.deleteAll();

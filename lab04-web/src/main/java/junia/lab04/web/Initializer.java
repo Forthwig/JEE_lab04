@@ -1,9 +1,12 @@
 package junia.lab04.web;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import junia.lab04.core.config.AppConfig;
 import junia.lab04.core.config.DBConfig;
 import junia.lab04.web.config.WebConfig;
+
+import java.util.logging.Logger;
 
 public class Initializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

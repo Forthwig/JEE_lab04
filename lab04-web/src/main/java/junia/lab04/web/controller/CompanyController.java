@@ -1,6 +1,9 @@
 package junia.lab04.web.controller;
 import junia.lab04.core.entity.Company;
 import junia.lab04.core.service.CompanyService;
+import junia.lab04.web.Initializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,6 +19,8 @@ public class CompanyController {
     @Inject
     private CompanyService companyService;
 
+    private static final Logger logger =  LoggerFactory.getLogger(CompanyController.class);
+
     @RequestMapping(path = "/list", method = RequestMethod.GET)
     public String getListOfCompanies(ModelMap modelMap){
         modelMap.put("companies",this.companyService.findAllWithProjects());
@@ -25,6 +30,7 @@ public class CompanyController {
     @RequestMapping(path = "/{id}/delete", method=RequestMethod.GET)
     public String submitdelete(@PathVariable int id){
         this.companyService.deleteById(id);
+        logger.warn("suppresion d'une compagnie");
         return "redirect:../list";
     }
 
