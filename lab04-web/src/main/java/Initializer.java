@@ -1,6 +1,8 @@
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import junia.lab04.core.config.AppConfig;
 import junia.lab04.core.config.DBConfig;
+import junia.lab04.web.config.WebConfig;
 
 public class Initializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -17,6 +19,6 @@ public class Initializer extends AbstractAnnotationConfigDispatcherServletInitia
 
     @Override
     protected String[] getServletMappings() {
-        return new String[0];
+        return new String[]{"/"};
     }
 }
