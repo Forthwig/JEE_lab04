@@ -29,8 +29,8 @@ For this module, you have to declare, in the `pom.xml` file, the following depen
 
 For this module, we won't write any `web.xml`  file, because everything will be configured with Java
 
-### Initializer
-In the `junia.lab04.web` package, create a class named `Initializer` which extends `AbstractAnnotationConfigDispatcherServletInitializer` (_hey, that's what I call an accurate name!_)
+### junia.lab04.web.Initializer
+In the `junia.lab04.web` package, create a class named `junia.lab04.web.Initializer` which extends `AbstractAnnotationConfigDispatcherServletInitializer` (_hey, that's what I call an accurate name!_)
 
 3 methods to implement:
 - `getRootConfigClasses()` which returns an array filled with `AppConfig` and `DBConfig`, theses classes are provided by the core module.

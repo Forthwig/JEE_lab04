@@ -1,3 +1,4 @@
+package junia.lab04.web;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import junia.lab04.core.config.AppConfig;
