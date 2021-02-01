@@ -19,7 +19,4 @@ public class CompanyController {
         return  "companiesList";
     }
 
-    
-
-
 }

@@ -24,7 +24,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public VelocityViewResolver Resolver(){
         VelocityViewResolver velocityViewResolver = new VelocityViewResolver();
-        velocityViewResolver.setPrefix(".vm");
+        velocityViewResolver.setSuffix(".vm");
         return velocityViewResolver;
     };
 
