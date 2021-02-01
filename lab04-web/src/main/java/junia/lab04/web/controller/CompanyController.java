@@ -4,6 +4,7 @@ import junia.lab04.core.service.CompanyService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -21,12 +22,17 @@ public class CompanyController {
         return  "companiesList";
     }
 
+    @RequestMapping(path = "/{id}/delete", method=RequestMethod.GET)
+    public String submitdelete(@PathVariable int id){
+        this.companyService.deleteById(id);
+        return "redirect:../list";
+    }
+
     @RequestMapping(path = "/form")
     public String getform(ModelMap modelMap){
         modelMap.put("company",new Company());
         return "companyForm";
     }
-
 
     @RequestMapping(path = "/form", method = RequestMethod.POST)
     public String submitForm (@ModelAttribute("company") Company company){
