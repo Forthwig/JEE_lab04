@@ -1,4 +1,5 @@
 package junia.lab04.web.controller;
+import junia.lab04.core.entity.Company;
 import junia.lab04.core.service.CompanyService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,6 +18,13 @@ public class CompanyController {
     public String getListOfCompanies(ModelMap modelMap){
         modelMap.put("companies",this.companyService.findAllWithProjects());
         return  "companiesList";
+    }
+
+    @RequestMapping(path = "/form")
+    public String getform(ModelMap modelMap){
+        Company company = new Company();
+        modelMap.put(company.getName(),company);
+        return "companyForm";
     }
 
 }
