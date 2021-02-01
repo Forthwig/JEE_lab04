@@ -15,16 +15,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
 
     @Bean
-    private VelocityConfigurer velocityConfigurer;
+    public VelocityConfigurer Configurer(){
+        VelocityConfigurer velocityConfigurer = new VelocityConfigurer();
+        velocityConfigurer.setResourceLoaderPath("/WEB-INF/velocity");
+        return velocityConfigurer;
+    }
 
     @Bean
-    private VelocityViewResolver velocityViewResolver;
-
-
-
-    public WebConfig() {
-        velocityConfigurer.setResourceLoaderPath("/WEB-INF/velocity");
-    }
+    public VelocityViewResolver Resolver(){
+        VelocityViewResolver velocityViewResolver = new VelocityViewResolver();
+        velocityViewResolver.setPrefix(".vm");
+        return velocityViewResolver;
+    };
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
