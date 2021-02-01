@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lab04</title>
+
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Lab04</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>List of companies</h1>
+
+    </div>
+
+
+    <table class="table table-striped">
+        #foreach($company in $companies)
+            <tr>
+                <td>$company.name</td>
+                <td>
+                    #foreach($project in $company.projects)
+                        Course : $project.name :
+                       <br/>
+                    #end
+                </td>
+                <td><a href="$company.id/delete" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
+            </tr>
+        #end
+    </table>
+</div>
+
+
+</body>
+</html>
