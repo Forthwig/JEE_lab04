@@ -23,8 +23,7 @@ public class CompanyController {
 
     @RequestMapping(path = "/form")
     public String getform(ModelMap modelMap){
-        Company company = new Company();
-        modelMap.put(company.getName(),company);
+        modelMap.put("company",new Company());
         return "companyForm";
     }
 
