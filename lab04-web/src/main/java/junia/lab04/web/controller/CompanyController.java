@@ -35,6 +35,7 @@ public class CompanyController {
     public String submitFormIngenieur(@ModelAttribute("Ingenieur") Ingenieur ingenieur){
         if(ingenieurService.contains(ingenieur)){
             logger.info("Logged with succes");
+            //TODO filter
             return "redirect:list";
         }
         return "redirect:";
@@ -44,6 +45,7 @@ public class CompanyController {
     @RequestMapping(path = "/list", method = RequestMethod.GET)
     public String getListOfCompanies(ModelMap modelMap){
         modelMap.put("companies",this.companyService.findAllWithProjects());
+        //TODO filter
         return  "companiesList";
     }
 
@@ -57,6 +59,7 @@ public class CompanyController {
     @RequestMapping(path = "/form")
     public String getform(ModelMap modelMap){
         modelMap.put("company",new Company());
+        //TODO filter
         return "companyForm";
     }
 
