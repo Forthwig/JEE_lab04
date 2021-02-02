@@ -18,6 +18,33 @@ USE `junia_lab03`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `ingenieur`
+--
+
+DROP TABLE IF EXISTS `ingenieur`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ingenieur` (
+                                `id` bigint(20) NOT NULL,
+                                `login` varchar(255) DEFAULT NULL,
+                                `password` varchar(255) DEFAULT NULL,
+                                `creationDate` datetime DEFAULT NULL,
+                                `updateDate` datetime DEFAULT NULL,
+                                PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ingenieur`
+--
+
+LOCK TABLES `ingenieur` WRITE;
+/*!40000 ALTER TABLE `ingenieur` DISABLE KEYS */;
+INSERT INTO `ingenieur` VALUES (1,'junia','isen','2019-09-16 10:00:38',NULL),(2,'hei','isa','2019-09-16 10:00:38',NULL);
+/*!40000 ALTER TABLE `ingenieur` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `businesstype`
 --
 

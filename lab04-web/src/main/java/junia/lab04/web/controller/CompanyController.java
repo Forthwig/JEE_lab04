@@ -1,6 +1,8 @@
 package junia.lab04.web.controller;
 import junia.lab04.core.entity.Company;
+import junia.lab04.core.entity.Ingenieur;
 import junia.lab04.core.service.CompanyService;
+import junia.lab04.core.service.IngenieurService;
 import junia.lab04.web.Initializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,8 +20,26 @@ public class CompanyController {
 
     @Inject
     private CompanyService companyService;
+    @Inject
+    private IngenieurService ingenieurService;
 
     private static final Logger logger =  LoggerFactory.getLogger(CompanyController.class);
+
+    @RequestMapping(path = "")
+    public String getIngenieur(ModelMap modelMap){
+        modelMap.put("ingenieur",new Ingenieur());
+        return "index";
+    }
+
+    @RequestMapping(path = "", method = RequestMethod.POST)
+    public String submitFormIngenieur(@ModelAttribute("Ingenieur") Ingenieur ingenieur){
+        if(ingenieurService.contains(ingenieur)){
+            logger.info("Logged with succes");
+            return "redirect:list";
+        }
+        return "redirect:";
+    }
+
 
     @RequestMapping(path = "/list", method = RequestMethod.GET)
     public String getListOfCompanies(ModelMap modelMap){

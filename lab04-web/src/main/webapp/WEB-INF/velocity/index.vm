@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab04</title>
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"	rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+
+</head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Lab04</a>
+        </div>
+    </div>
+</nav>
+
+<body>
+<!--<%
+if(request.getAttribute("loginError")!=null) {
+out.print((String)request.getAttribute("loginError"));
+}else{
+out.print("You have to authenticate yourself");
+}
+%>
+-->
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>Welcome, please login</h1>
+    </div>
+
+    <form action="" method="POST">
+        <div class="form-group">
+            <label for="login">login</label>
+            #springFormInput("ingenieur.login" "class='form-control' id='login' placeholder='login'")
+            <label for="password">password</label>
+            #springFormPasswordInput("ingenieur.password" "class='form-control' id='password' placeholder='password'")
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
