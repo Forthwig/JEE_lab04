@@ -28,6 +28,8 @@ CREATE TABLE `ingenieur` (
                                 `id` bigint(20) NOT NULL,
                                 `login` varchar(255) DEFAULT NULL,
                                 `password` varchar(255) DEFAULT NULL,
+                                `enable` int(1) DEFAULT NULL,
+                                `role` varchar(255) DEFAULT NULL,
                                 `creationDate` datetime DEFAULT NULL,
                                 `updateDate` datetime DEFAULT NULL,
                                 PRIMARY KEY (`id`)
@@ -40,7 +42,7 @@ CREATE TABLE `ingenieur` (
 
 LOCK TABLES `ingenieur` WRITE;
 /*!40000 ALTER TABLE `ingenieur` DISABLE KEYS */;
-INSERT INTO `ingenieur` VALUES (1,'junia','isen','2019-09-16 10:00:38',NULL),(2,'hei','isa','2019-09-16 10:00:38',NULL);
+INSERT INTO `ingenieur` VALUES (1,'junia','isen',1,'ROLE_USER','2019-09-16 10:00:38',NULL),(2,'hei','isa',1,'ROLE_USER','2019-09-16 10:00:38',NULL);
 /*!40000 ALTER TABLE `ingenieur` ENABLE KEYS */;
 UNLOCK TABLES;
 

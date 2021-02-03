@@ -10,6 +10,8 @@ public class Ingenieur extends GenericEntity{
 
     private String password;
 
+    private String role;
+
     public Ingenieur() {
     }
 
@@ -32,6 +34,14 @@ public class Ingenieur extends GenericEntity{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override

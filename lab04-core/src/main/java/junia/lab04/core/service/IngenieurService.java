@@ -33,10 +33,15 @@ public class IngenieurService {
         return ingenieurDAO.count();
     }
 
-    public Boolean contains(Ingenieur ingenieur){return !ingenieurDAO.findIngenieurBy(ingenieur.getLogin(),ingenieur.getPassword()).isEmpty();}
-
-
-    public Ingenieur findByUsername(String username) {
-        return new Ingenieur();
+    @Transactional(readOnly = true)
+    public Ingenieur findByLogin(String login) {
+        Ingenieur ingenieur = null;
+        try {
+            ingenieur = ingenieurDAO.findByLogin(login);
+        } catch (Exception e) {
+            throw e;
+        }
+        return ingenieur;
     }
+
 }

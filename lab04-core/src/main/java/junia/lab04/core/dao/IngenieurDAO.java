@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface IngenieurDAO extends JpaRepository<Ingenieur,Long> {
 
-    @Query("SELECT i FROM Ingenieur i where i.login = :login and i.password =:password")
-    List<Ingenieur> findIngenieurBy(@Param("login") String login, @Param("password") String password);
+    @Query("SELECT i FROM Ingenieur i WHERE i.login =: login" )
+    Ingenieur findByLogin(@Param("login") String login);
 
 }

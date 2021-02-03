@@ -24,6 +24,8 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Lab04</a>
+            <a class="navbar-brand" href="logout">logout</a>
+            <a class="navbar-brand" href="list">list</a>
         </div>
     </div>
 </nav>
