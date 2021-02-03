@@ -41,9 +41,9 @@ out.print("You have to authenticate yourself");
     <form action="" method="POST">
         <div class="form-group">
             <label for="login">login</label>
-            <input type='text' name='username' value=''>
+            <input type='text' class='form-control' name='username' value=''>
             <label for="password">password</label>
-            <input type='password' name='password' />
+            <input type='password' class='form-control' name='password' />
         </div>
 
         <button type="submit" class="btn btn-default">Submit</button>
