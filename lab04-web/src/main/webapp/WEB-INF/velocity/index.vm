@@ -35,14 +35,15 @@ out.print("You have to authenticate yourself");
 
     <div class="jumbotron">
         <h1>Welcome, please login</h1>
+        <h5>$errorMessge</h5>
     </div>
 
     <form action="" method="POST">
         <div class="form-group">
             <label for="login">login</label>
-            #springFormInput("ingenieur.login" "class='form-control' id='login' placeholder='login'")
+            <input type='text' name='username' value=''>
             <label for="password">password</label>
-            #springFormPasswordInput("ingenieur.password" "class='form-control' id='password' placeholder='password'")
+            <input type='password' name='password' />
         </div>
 
         <button type="submit" class="btn btn-default">Submit</button>

@@ -13,6 +13,11 @@ public class Ingenieur extends GenericEntity{
     public Ingenieur() {
     }
 
+    public Ingenieur(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
     public String getLogin() {
         return login;
     }

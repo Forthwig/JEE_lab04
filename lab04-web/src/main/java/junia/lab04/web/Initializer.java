@@ -1,19 +1,17 @@
 package junia.lab04.web;
 
-import org.slf4j.LoggerFactory;
+import junia.lab04.web.config.SecurityConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import junia.lab04.core.config.AppConfig;
 import junia.lab04.core.config.DBConfig;
 import junia.lab04.web.config.WebConfig;
-
-import java.util.logging.Logger;
 
 public class Initializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
 
-        return new Class[]{AppConfig.class, DBConfig.class};
+        return new Class[]{AppConfig.class, DBConfig.class, SecurityConfig.class};
     }
 
     @Override
